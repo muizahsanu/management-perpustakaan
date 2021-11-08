@@ -1,0 +1,32 @@
+@use '../utils/' as *;
+
+.pagination{
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    list-style: none;
+    margin: rem(16) 0;
+    padding: 0;
+    li{
+        background-color: $c-bg;
+        border-radius: rem(4);
+        span,a{
+            padding: rem(4) rem(8);
+        }
+        &.active, &:hover{
+            background-color: $c-accent;
+            span,a{
+                color: white;
+            }
+        }
+        // span,a{
+        //     background-color: $c-bg;
+        //     padding: rem(4) rem(8);
+        //     border-radius: rem(4);
+        //     &.active, &:hover{
+        //         background-color: $c-primary;
+        //         cursor: pointer;
+        //     }
+        // }
+    }
+}

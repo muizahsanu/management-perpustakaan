@@ -1,0 +1,13 @@
+body, html{
+    font-family: 'Nunito', arial, sans-serif;
+}
+
+a, a:active, a:visited{
+    text-decoration: none;
+}
+
+.error-message{
+    font-size: rem(14);
+    color: red;
+    font-weight: 700;
+}

@@ -1,0 +1,33 @@
+@use '../utils/' as *;
+
+.selector{
+    // height: rem(36);
+    overflow: hidden;
+    &__content{
+        max-height: 0;
+        z-index: 1;
+        width: 100%;
+        background-color: $c-bg;
+        border: rem(1) solid $c-accent;
+        border-radius: rem(4);
+        margin-top: rem(8);
+        transition: all .55s ease-in-out;
+        opacity: 0;
+    }
+    &__item{
+        padding: rem(8);
+        font-size: rem(14);
+        &:hover{
+            background-color: $c-primary;
+            color: white;
+        }
+    }
+
+    &.show{
+        // height: max-content;
+        .selector__content{
+            max-height: 1000px;
+            opacity: 1;
+        }
+    }
+}

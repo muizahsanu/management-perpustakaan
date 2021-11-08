@@ -1,0 +1,46 @@
+@use '../utils/' as *;
+
+.sidenav{
+    display: flex;
+    flex-direction: column;
+    background-color: $c-bg;
+    border-right: rem(1) solid $c-primary;
+    height: 100%;
+    min-height: 100vh;
+    &__brand{
+        display: flex;
+        gap: rem(4);
+        font-size: rem(20);
+        font-weight: 700;
+        margin: rem(18) rem(16);
+    }
+    &__item, &__item--child{
+        display: flex;
+        align-items: center;
+        gap: rem(4);
+        padding: rem(8) rem(16);
+        color: black;
+        i{
+            font-size: rem(20);
+        }
+        &.active, &:hover{
+            background-color: $c-primary;
+            color: white;
+        }
+    }
+    &__item--child{
+        padding-left: rem(32);
+    }
+}
+
+.dummy-brand{
+    display: flex;
+    align-items: center;
+    background-color: $c-primary;
+    color: white;
+    border-radius: rem(4);
+    padding: 0 rem(2);
+    .ic-2{
+        margin-left: rem(-11);
+    }
+}

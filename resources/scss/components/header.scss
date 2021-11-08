@@ -1,0 +1,46 @@
+@use '../utils/' as *;
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: $c-bg;
+    border-bottom: rem(1) solid $c-primary;
+
+    &__searchbar{
+        flex: 1;
+        max-width: calculate-width(2);
+        display: flex;
+        align-items: center;
+        border: rem(1) solid $c-primary;
+        border-radius: rem(4);
+        margin: rem(16) 0;
+        .icon{
+            background-color: $c-primary;
+            padding: rem(4) rem(8);
+            color: white;
+        }
+        input{
+            border: none;
+            background-color: transparent;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    &__dropdown{
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+        margin-left: auto;
+        .image-icon{
+            width: rem(32);
+            height: rem(32);
+            border-radius: 100%;
+            overflow: hidden;
+        }
+        :hover{
+            cursor: pointer;
+        }
+    }
+}

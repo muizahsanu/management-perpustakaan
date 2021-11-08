@@ -1,0 +1,27 @@
+@use '../utils/' as *;
+
+.form{
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(8);
+        input, textarea{
+            flex: 1;
+            padding: rem(4) rem(8);
+            border: rem(1) solid $c-accent;
+            border-radius: rem(4);
+            &:focus{
+                outline-color: $c-primary;
+            }
+        }
+        label{
+            font-size: rem(14);
+            font-weight: 700;
+        }
+        &.ver{
+            flex-direction: row;
+            gap: rem(8);
+            label{padding: rem(4) 0}
+        }
+    }
+}

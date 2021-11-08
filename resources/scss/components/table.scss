@@ -1,0 +1,18 @@
+@use '../utils/' as *;
+
+.table{
+    width: 100%;
+    background-color: $c-bg;
+    border-radius: rem(8);
+    border-collapse: collapse;
+    overflow: hidden;
+    th, td{
+        border: rem(1) solid #ddd;
+        padding: 8px;
+    }
+    th{
+        background-color: $c-primary;
+        color: white;
+        text-align: left;
+    }
+}

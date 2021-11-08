@@ -1,0 +1,317 @@
+/* Convert Pixel to Rem */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: #DFD8CA;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type=submit] {
+  border: none;
+}
+
+body, html {
+  font-family: "Nunito", arial, sans-serif;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+}
+
+.error-message {
+  font-size: rem(14);
+  color: red;
+  font-weight: 700;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+.container .dasboard, .container .category, .container .header {
+  padding: 0 1rem;
+}
+.container .bookpage, .container .addbookpage {
+  padding: 1rem;
+}
+.container .bookpage__title, .container .addbookpage__title {
+  text-transform: uppercase;
+}
+.container .bookpage__header, .container .addbookpage__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FBF3E4;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+.container .bookpage .ml-auto, .container .addbookpage .ml-auto {
+  margin-left: auto;
+}
+.container .bookpage__body, .container .addbookpage__body {
+  background-color: #FBF3E4;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #B91646;
+  color: white;
+  font-size: 0.875rem;
+}
+.btn.blue {
+  background-color: #118ab2;
+}
+.btn.c-accent {
+  background-color: #105652;
+}
+.btn:not(.disabled):hover {
+  filter: brightness(0.8);
+}
+.btn.disabled {
+  background-color: #ddd;
+}
+.btn.disabled:hover {
+  cursor: default;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  background-color: #FBF3E4;
+  border-right: 0.0625rem solid #B91646;
+  height: 100%;
+  min-height: 100vh;
+}
+.sidenav__brand {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1.125rem 1rem;
+}
+.sidenav__item, .sidenav__item--child {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  color: black;
+}
+.sidenav__item i, .sidenav__item--child i {
+  font-size: 1.25rem;
+}
+.sidenav__item.active, .sidenav__item:hover, .sidenav__item--child.active, .sidenav__item--child:hover {
+  background-color: #B91646;
+  color: white;
+}
+.sidenav__item--child {
+  padding-left: 2rem;
+}
+
+.dummy-brand {
+  display: flex;
+  align-items: center;
+  background-color: #B91646;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0 0.125rem;
+}
+.dummy-brand .ic-2 {
+  margin-left: -0.6875rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #FBF3E4;
+  border-bottom: 0.0625rem solid #B91646;
+}
+.header__searchbar {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  border: 0.0625rem solid #B91646;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+}
+.header__searchbar .icon {
+  background-color: #B91646;
+  padding: 0.25rem 0.5rem;
+  color: white;
+}
+.header__searchbar input {
+  border: none;
+  background-color: transparent;
+}
+.header__searchbar input:focus {
+  outline: none;
+}
+.header__dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.header__dropdown .image-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.header__dropdown :hover {
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  background-color: #FBF3E4;
+  border-radius: 0.5rem;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+.table th, .table td {
+  border: 0.0625rem solid #ddd;
+  padding: 8px;
+}
+.table th {
+  background-color: #B91646;
+  color: white;
+  text-align: left;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.pagination li {
+  background-color: #FBF3E4;
+  border-radius: 0.25rem;
+}
+.pagination li span, .pagination li a {
+  padding: 0.25rem 0.5rem;
+}
+.pagination li.active, .pagination li:hover {
+  background-color: #105652;
+}
+.pagination li.active span, .pagination li.active a, .pagination li:hover span, .pagination li:hover a {
+  color: white;
+}
+
+.form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+.form .form-group input, .form .form-group textarea {
+  flex: 1;
+  padding: 0.25rem 0.5rem;
+  border: 0.0625rem solid #105652;
+  border-radius: 0.25rem;
+}
+.form .form-group input:focus, .form .form-group textarea:focus {
+  outline-color: #B91646;
+}
+.form .form-group label {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.form .form-group.ver {
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.form .form-group.ver label {
+  padding: 0.25rem 0;
+}
+
+.selector {
+  overflow: hidden;
+}
+.selector__content {
+  max-height: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #FBF3E4;
+  border: 0.0625rem solid #105652;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  transition: all 0.55s ease-in-out;
+  opacity: 0;
+}
+.selector__item {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+.selector__item:hover {
+  background-color: #B91646;
+  color: white;
+}
+.selector.show .selector__content {
+  max-height: 1000px;
+  opacity: 1;
+}

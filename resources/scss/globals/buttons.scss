@@ -1,0 +1,26 @@
+@use '../utils/' as *;
+
+.btn{
+    display: inline-block;
+    padding: rem(4) rem(8);
+    border-radius: rem(4);
+    background-color: $c-primary;
+    color: white;
+    font-size: rem(14);
+    &.blue{
+        background-color: $c-blue;
+    }
+    &.c-accent{
+        background-color: $c-accent;
+    }
+    &:not(.disabled):hover{
+        filter: brightness(.8);
+    }
+    &.disabled{
+        background-color: $c-disable;
+        &:hover{cursor: default;}
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}

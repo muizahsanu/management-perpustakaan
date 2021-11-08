@@ -1,0 +1,85 @@
+@use 'functions' as *;
+@use 'colors' as *;
+@use 'breakpoints' as *;
+
+%bg-image {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// Button
+%btn{
+    padding: rem(4) rem(10);
+    font-size: rem(14);
+    border-radius: rem(4);
+    background-color: $c-primary;
+    color: white;
+    border: 1px solid $c-primary;
+    &.txt-icon{
+        @extend %d-flex-hor;
+    }
+    &:hover{
+        background-color: lighten($c-primary,10%);
+        cursor: pointer;
+    }
+}
+%btn-text{
+    font-size: rem(14);
+    padding: rem(8);
+    &:hover,&.active{
+        background-color: $c-primary;
+        color: white;
+    }
+    &.active{
+        font-weight: 700;
+    }
+    &.txt-icon{
+        // @extend %d-flex-hor;
+        display: flex;
+        gap: rem(4);
+    }
+    @include breakpoint(medium){
+        opacity: .8;
+        padding: 0;
+        &:hover,&.active{
+            opacity: 1;
+            color: $c-primary;
+            background-color: transparent;
+        }
+        &.txt-icon{
+            display: inline-block;
+        }
+    }
+}
+
+// Display
+%d-flex-hor{
+    display: flex;
+    align-items: center;
+}
+%d-flex-ver{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+// Searchbar
+%searchbar{
+    @extend %d-flex-hor;
+    border: rem(1) solid $c-primary;
+    border-radius: rem(4);
+    font-size: rem(14);
+    overflow: hidden;
+    label{
+        @extend %btn;
+        border-radius: 0;
+    }
+    input{
+        border: none;
+        width: 100%;
+        margin-left: 0.25rem;
+        background-color: transparent;
+    }
+}

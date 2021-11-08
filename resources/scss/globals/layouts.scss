@@ -1,0 +1,33 @@
+@use '../utils/' as *;
+
+.container{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    .dasboard, .category, .header{
+        padding: 0 rem(16);
+    }
+
+    .bookpage, .addbookpage{
+        padding: rem(16);
+        &__title{
+            text-transform: uppercase;
+        }
+        &__header{
+            display: flex;
+            align-items: center;
+            gap: rem(8);
+            background-color: $c-bg;
+            padding: rem(8);
+            margin-bottom: rem(16);
+            border-radius: rem(4);
+        }
+        .ml-auto{
+            margin-left: auto;
+        }
+        &__body{
+            background-color: $c-bg;
+            padding: rem(8);
+            border-radius: rem(4);
+        }
+    }
+}
