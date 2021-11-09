@@ -25,6 +25,7 @@ class BookController extends Controller
     public function addbookPage(){
         return view('add-book',[
             'title'=> 'Add Book',
+            'searchValue'=> request('search'),
             'categories'=> Category::all(),
         ]);
     }
@@ -74,6 +75,7 @@ class BookController extends Controller
     public function edit(Book $book){
         return view('update-book',[
             'title'=> 'Update Book',
+            'searchValue'=> request('search'),
             'book'=> $book,
             'categories'=> Category::all(),
         ]);

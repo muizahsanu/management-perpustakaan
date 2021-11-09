@@ -29,6 +29,7 @@ Route::put('/book/update/{book:uniqid}', [BookController::class, 'update']);
 
 Route::get('/categories', function () {
     return view('category',[
+        'searchValue'=> request('search'),
         'title'=> 'Categories'
     ]);
 });

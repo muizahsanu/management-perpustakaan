@@ -4,7 +4,7 @@
 <div class="bookpage">
     <div class="bookpage__header">
         <h2 class="bookpage__title">Book list</h2>
-        <a href="/admin/book/add-book" class="btn c-accent ml-auto"><i class='bx bx-plus' ></i></a>
+        <a href="/book/add-book" class="btn c-accent ml-auto"><i class='bx bx-plus' ></i></a>
         <input type="submit" value="Delete" class="btn" form="form-book-delete">
         
     </div>
