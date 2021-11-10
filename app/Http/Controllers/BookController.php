@@ -12,7 +12,8 @@ class BookController extends Controller
         $books = Book::with('category')->latest();
 
         if(request('search')){
-            $books->where('title', 'like', '%' . request('search') .'%');
+            $books->where('title', 'like', '%' . request('search') .'%')
+                ->orWhere('id', 'like', '%'.request('search').'%');
         }
 
         return view('book',[

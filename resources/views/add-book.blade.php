@@ -6,7 +6,7 @@
         <h2 class="addbookpage__title">{{ $title }}</h2>
     </div>
     <div class="addbookpage__body">
-        <form action="/book/store" method="POST" class="form">
+        <form action="/book/store" method="POST" class="form" autocomplete="off">
             @csrf
             <div class="form-group">
                 <label for="booktitle">Title</label>

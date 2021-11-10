@@ -2064,6 +2064,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./selector */ "./resources/js/selector.js");
 
+__webpack_require__(/*! ./checkbox */ "./resources/js/checkbox.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2094,6 +2096,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/checkbox.js":
+/*!**********************************!*\
+  !*** ./resources/js/checkbox.js ***!
+  \**********************************/
+/***/ (() => {
+
+$("#checkbox-parent").change(function (e) {
+  $(".checkbox-child").prop('checked', $("#" + e.target.id).prop('checked'));
+});
 
 /***/ }),
 
@@ -2163,7 +2177,43 @@ function updateSelectorItem(inputSearch, oldData, selectorContent, selectorOptio
     });
     if (isEmpty($(inputSearch).val())) $(inputHidden).val('');
   });
-}
+} // SELECTOR FOR MULTIPLE INPUT FORM CATEGORY
+
+
+$(document).ready(function () {
+  // for(let i = 0; i <= 3; i++){
+  //     $('.form-input-category:eq(0)').clone().appendTo('.from-group-input')
+  // }
+  var howmuchInput = $('#moreCategory').val();
+  var currentInput = $('.form-input-category').length;
+  var count = howmuchInput - currentInput;
+
+  if (count > 0) {
+    for (var i = 0; i < count; i++) {
+      $('.form-input-category:eq(0)').clone().appendTo('.from-group-input');
+    }
+  } else if (count < 0) {
+    $('.from-group-input').children().last().remove();
+  }
+
+  console.log('sianjing');
+  $('#moreCategory').change(function () {
+    howmuchInput = $('#moreCategory').val();
+    currentInput = $('.form-input-category').length;
+    count = howmuchInput - currentInput;
+    console.log(count);
+
+    if (count > 0) {
+      for (var _i = 0; _i < count; _i++) {
+        $('.form-input-category:eq(0)').clone().appendTo('.from-group-input');
+      }
+    } else if (count < 0) {
+      for (var _i2 = count; _i2 < 0; _i2++) {
+        $('.from-group-input').children().last().remove();
+      }
+    }
+  });
+});
 
 /***/ }),
 

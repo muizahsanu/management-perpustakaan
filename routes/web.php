@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,6 @@ Route::post('/book/delete', [BookController::class, 'delete']);
 Route::get('/book/{book:uniqid}/edit', [BookController::class, 'edit']);
 Route::put('/book/update/{book:uniqid}', [BookController::class, 'update']);
 
-Route::get('/categories', function () {
-    return view('category',[
-        'searchValue'=> request('search'),
-        'title'=> 'Categories'
-    ]);
-});
+Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category/add', [CategoryController::class, 'addPage']);
+Route::post('/category/store', [CategoryController::class, 'store']);

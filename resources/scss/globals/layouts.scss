@@ -4,10 +4,10 @@
     display: grid;
     grid-template-columns: 300px 1fr;
     .dasboard, .category, .header{
-        padding: 0 rem(16);
+        padding: rem(16);
     }
 
-    .bookpage, .addbookpage{
+    .bookpage, .addbookpage, .category{
         padding: rem(16);
         &__title{
             text-transform: uppercase;

@@ -14,10 +14,10 @@
             <span>Add Book</span>
         </a>
     </a>
-    <a href="/categories" class="sidenav__item {{ ($title == 'Categories') ? 'active' : '' }}">
+    <a href="/category" class="sidenav__item {{ ($title == 'Categories') ? 'active' : '' }}">
         <i class='bx bxs-category'></i>
         <span>Categories</span>
-        <a href="/admin/book/add-book" class="sidenav__item--child {{ ($title == 'Add Category') ? 'active' : '' }}">
+        <a href="/category/add" class="sidenav__item--child {{ ($title == 'Add Category') ? 'active' : '' }}">
             <i class="bx bx-plus"></i>
             <span>Add Category</span>
         </a>

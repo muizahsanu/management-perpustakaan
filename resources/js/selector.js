@@ -64,3 +64,42 @@ function updateSelectorItem(inputSearch,oldData,selectorContent,selectorOption,i
         if(isEmpty($(inputSearch).val())) $(inputHidden).val('')
     })
 }
+
+// SELECTOR FOR MULTIPLE INPUT FORM CATEGORY
+$(document).ready(()=>{
+
+    // for(let i = 0; i <= 3; i++){
+    //     $('.form-input-category:eq(0)').clone().appendTo('.from-group-input')
+    // }
+
+    let howmuchInput = $('#moreCategory').val()
+    let currentInput = $('.form-input-category').length
+    let count = howmuchInput-currentInput
+
+    if(count > 0){
+        for(let i = 0; i < count; i++){
+            $('.form-input-category:eq(0)').clone().appendTo('.from-group-input')
+        }
+    }else if(count < 0){
+        $('.from-group-input').children().last().remove();
+    }
+
+    console.log('sianjing')
+    $('#moreCategory').change(()=>{
+        howmuchInput = $('#moreCategory').val()
+        currentInput = $('.form-input-category').length
+        count = howmuchInput-currentInput
+
+        console.log(count);
+
+        if(count > 0){
+            for(let i = 0; i < count; i++){
+                $('.form-input-category:eq(0)').clone().appendTo('.from-group-input')
+            }
+        }else if(count < 0){
+            for(let i = count; i < 0; i++){
+                $('.from-group-input').children().last().remove();
+            }
+        }
+    })
+})
